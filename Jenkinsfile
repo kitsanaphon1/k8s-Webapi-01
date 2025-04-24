@@ -16,6 +16,8 @@ pipeline {
             steps {
                 sh '''
                     echo "[INFO] Deploying manifests..."
+                    cd deploy
+
                     kubectl version --client
                     kubectl apply -f k8s-api.yaml
                     kubectl apply -f k8s-app.yaml
